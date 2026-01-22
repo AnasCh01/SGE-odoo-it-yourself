@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ACCIONES -->
+
+    <record id="ack_servicio_action" model="ir.actions.act_window">
+        <field name="name">Servicios</field>
+        <field name="res_model">ack.servicio</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ack_cliente_action" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="res_model">ack.cliente</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ack_empleado_action" model="ir.actions.act_window">
+        <field name="name">Empleados</field>
+        <field name="res_model">ack.empleado</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ack_reserva_action" model="ir.actions.act_window">
+        <field name="name">Reservas</field>
+        <field name="res_model">ack.reserva</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MENÚ PRINCIPAL -->
+    <menuitem
+        id="ack_menu_root"
+        name="Gestión de Reservas"
+        sequence="10"
+    />
+
+    <!-- SUBMENÚS -->
+    <menuitem
+        id="ack_menu_servicio"
+        name="Servicios"
+        parent="ack_menu_root"
+        action="ack_servicio_action"
+        sequence="10"
+    />
+
+    <menuitem
+        id="ack_menu_cliente"
+        name="Clientes"
+        parent="ack_menu_root"
+        action="ack_cliente_action"
+        sequence="20"
+    />
+
+    <menuitem
+        id="ack_menu_empleado"
+        name="Empleados"
+        parent="ack_menu_root"
+        action="ack_empleado_action"
+        sequence="30"
+    />
+
+    <menuitem
+        id="ack_menu_reserva"
+        name="Reservas"
+        parent="ack_menu_root"
+        action="ack_reserva_action"
+        sequence="40"
+    />
+
+</odoo>

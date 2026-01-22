@@ -18,6 +18,7 @@ con control de permisos según el tipo de usuario.
     "views/cliente_views.xml",
     "views/empleado_views.xml",
     "views/reserva_views.xml",
+    "views/menu.xml",
 ],
 
 
