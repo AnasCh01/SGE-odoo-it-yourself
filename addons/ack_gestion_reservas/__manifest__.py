@@ -12,10 +12,12 @@ con control de permisos según el tipo de usuario.
     "website": "",
     "depends": ["base"],
     "data": [
-        "security/security.xml",
-        "security/ir.model.access.csv",
-        "views/servicio_views.xml",
-    ],
+    "security/security.xml",
+    "security/ir.model.access.csv",
+    "views/servicio_views.xml",
+    "views/cliente_views.xml",
+],
+
     "demo": [
         "data/demo.xml",
     ],
