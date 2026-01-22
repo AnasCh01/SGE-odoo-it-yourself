@@ -14,6 +14,7 @@ con control de permisos según el tipo de usuario.
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",
+        "views/servicio_views.xml",
     ],
     "demo": [
         "data/demo.xml",
@@ -21,4 +22,3 @@ con control de permisos según el tipo de usuario.
     "installable": True,
     "application": True,
 }
-
