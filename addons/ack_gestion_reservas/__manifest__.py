@@ -16,6 +16,7 @@ con control de permisos según el tipo de usuario.
     "security/ir.model.access.csv",
     "views/servicio_views.xml",
     "views/cliente_views.xml",
+    "views/empleado_views.xml",
 ],
 
     "demo": [
