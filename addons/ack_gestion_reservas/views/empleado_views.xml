@@ -23,7 +23,24 @@
                     <group>
                         <field name="name"/>
                         <field name="role"/>
+                        <field name="service_ids" widget="many2many_tags"/>
                     </group>
+
+                    <!-- TREE ANIDADO -->
+                    <notebook>
+                        <page string="Reservas">
+                            <field name="reservation_ids">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="cliente_id"/>
+                                    <field name="servicio_id"/>
+                                    <field name="state"/>
+                                    <field name="price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
                 </sheet>
             </form>
         </field>

@@ -26,6 +26,22 @@
                         <field name="email"/>
                         <field name="phone"/>
                     </group>
+
+                    <!-- TREE ANIDADO -->
+                    <notebook>
+                        <page string="Reservas">
+                            <field name="reservation_ids">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="servicio_id"/>
+                                    <field name="empleado_id"/>
+                                    <field name="state"/>
+                                    <field name="price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
                 </sheet>
             </form>
         </field>
