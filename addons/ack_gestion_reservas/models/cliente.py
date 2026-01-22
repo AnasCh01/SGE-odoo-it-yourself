@@ -8,3 +8,9 @@ class AckCliente(models.Model):
     name = fields.Char(string="Nombre", required=True)
     email = fields.Char(string="Email")
     phone = fields.Char(string="Teléfono")
+
+    reservation_ids = fields.One2many(
+        "ack.reserva",
+        "cliente_id",
+        string="Reservas",
+    )

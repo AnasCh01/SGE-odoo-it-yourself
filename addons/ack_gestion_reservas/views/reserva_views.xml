@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Vista Tree -->
+    <record id="ack_reserva_tree_view" model="ir.ui.view">
+        <field name="name">ack.reserva.tree</field>
+        <field name="model">ack.reserva</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="cliente_id"/>
+                <field name="servicio_id"/>
+                <field name="empleado_id"/>
+                <field name="state"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Form -->
+    <record id="ack_reserva_form_view" model="ir.ui.view">
+        <field name="name">ack.reserva.form</field>
+        <field name="model">ack.reserva</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="state"/>
+                    </group>
+
+                    <group>
+                        <field name="cliente_id"/>
+                        <field name="servicio_id"/>
+                        <field name="empleado_id"/>
+                        <field name="price" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
