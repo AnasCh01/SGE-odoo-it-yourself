@@ -22,10 +22,11 @@
     </record>
 
     <record id="ack_reserva_action" model="ir.actions.act_window">
-        <field name="name">Reservas</field>
-        <field name="res_model">ack.reserva</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+    <field name="name">Reservas</field>
+    <field name="res_model">ack.reserva</field>
+    <field name="view_mode">calendar,tree,form</field>
+</record>
+
 
     <!-- MENÚ PRINCIPAL -->
     <menuitem

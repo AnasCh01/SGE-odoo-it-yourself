@@ -40,4 +40,23 @@
         </field>
     </record>
 
+    
+    <!-- Vista Calendario -->
+    <record id="ack_reserva_calendar_view" model="ir.ui.view">
+        <field name="name">ack.reserva.calendar</field>
+        <field name="model">ack.reserva</field>
+        <field name="arch" type="xml">
+            <calendar
+                string="Reservas"
+                date_start="date"
+                color="state"
+            >
+                <field name="cliente_id"/>
+                <field name="servicio_id"/>
+                <field name="empleado_id"/>
+            </calendar>
+        </field>
+    </record>
+
+
 </odoo>
