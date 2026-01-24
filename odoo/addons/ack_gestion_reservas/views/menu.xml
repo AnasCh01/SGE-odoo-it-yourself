@@ -21,11 +21,13 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="ack_reserva_action" model="ir.actions.act_window">
+    
+    <record id="action_ack_reserva" model="ir.actions.act_window">
     <field name="name">Reservas</field>
     <field name="res_model">ack.reserva</field>
-    <field name="view_mode">calendar,tree,form</field>
-</record>
+    <field name="view_mode">calendar,kanban,tree,form</field>
+    </record>
+
 
 
     <!-- MENÚ PRINCIPAL -->
@@ -61,11 +63,12 @@
     />
 
     <menuitem
-        id="ack_menu_reserva"
-        name="Reservas"
-        parent="ack_menu_root"
-        action="ack_reserva_action"
-        sequence="40"
-    />
+    id="ack_menu_reserva"
+    name="Reservas"
+    parent="ack_menu_root"
+    action="action_ack_reserva"
+    sequence="40"
+/>
+
 
 </odoo>
