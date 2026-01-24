@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class AckReserva(models.Model):
@@ -44,3 +45,11 @@ class AckReserva(models.Model):
     def _compute_price(self):
         for record in self:
             record.price = record.servicio_id.price if record.servicio_id else 0.0
+
+    @api.constrains("date")
+    def _check_date_not_in_past(self):
+        for record in self:
+            if record.date and record.date < fields.Datetime.now():
+                raise ValidationError(
+                    "No se pueden crear reservas en el pasado."
+                )
