@@ -44,7 +44,7 @@
 
     <!-- RESERVAS -->
     <record id="ack_reserva_1" model="ack.reserva">
-        <field name="date">2026-01-20 10:00:00</field>
+        <field name="date">2026-02-20 10:00:00</field>
         <field name="cliente_id" ref="ack_cliente_juan"/>
         <field name="servicio_id" ref="ack_servicio_limpieza"/>
         <field name="empleado_id" ref="ack_empleado_ana"/>
@@ -52,7 +52,7 @@
     </record>
 
     <record id="ack_reserva_2" model="ack.reserva">
-        <field name="date">2026-01-21 16:00:00</field>
+        <field name="date">2026-02-21 16:00:00</field>
         <field name="cliente_id" ref="ack_cliente_maria"/>
         <field name="servicio_id" ref="ack_servicio_mantenimiento"/>
         <field name="empleado_id" ref="ack_empleado_pedro"/>
