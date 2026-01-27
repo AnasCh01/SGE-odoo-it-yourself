@@ -3,8 +3,8 @@
 
     <!-- Vista Tree -->
     <record id="ack_empleado_tree_view" model="ir.ui.view">
-        <field name="name">ack.empleado.tree</field>
-        <field name="model">ack.empleado</field>
+        <field name="name">ack_gestion_reservas.empleado.tree</field>
+        <field name="model">ack_gestion_reservas.empleado</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -15,8 +15,8 @@
 
     <!-- Vista Form -->
     <record id="ack_empleado_form_view" model="ir.ui.view">
-        <field name="name">ack.empleado.form</field>
-        <field name="model">ack.empleado</field>
+        <field name="name">ack_gestion_reservas.empleado.form</field>
+        <field name="model">ack_gestion_reservas.empleado</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
