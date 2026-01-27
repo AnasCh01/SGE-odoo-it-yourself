@@ -5,8 +5,14 @@ from odoo.exceptions import ValidationError
 class AckReserva(models.Model):
     _name = "ack.reserva"
     _description = "Reserva"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    date = fields.Datetime(string="Fecha y hora", required=True)
+    date = fields.Datetime(
+        string="Fecha y hora",
+        required=True,
+        tracking=True,
+    )
+
     state = fields.Selection(
         [
             ("draft", "Pendiente"),
@@ -15,6 +21,7 @@ class AckReserva(models.Model):
         ],
         string="Estado",
         default="draft",
+        tracking=True,
     )
 
     cliente_id = fields.Many2one(
@@ -22,6 +29,7 @@ class AckReserva(models.Model):
         string="Cliente",
         required=True,
         ondelete="cascade",
+        tracking=True,
     )
 
     servicio_id = fields.Many2one(

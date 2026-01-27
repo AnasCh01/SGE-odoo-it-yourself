@@ -10,7 +10,7 @@ con control de permisos según el tipo de usuario.
     """,
     "author": "Anas Ch",
     "website": "",
-    "depends": ["base"],
+    "depends": ["base", "mail"],
     "data": [
     "security/security.xml",
     "security/ir.model.access.csv",
@@ -18,6 +18,7 @@ con control de permisos según el tipo de usuario.
     "views/cliente_views.xml",
     "views/empleado_views.xml",
     "views/reserva_views.xml",
+    "views/reserva_chatter_views.xml",
     "views/menu.xml",
 ],
 

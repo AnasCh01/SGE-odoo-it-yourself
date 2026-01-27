@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="ack_reserva_form_chatter" model="ir.ui.view">
+        <field name="name">ack.reserva.form.chatter</field>
+        <field name="model">ack.reserva</field>
+        <field name="inherit_id" ref="ack_gestion_reservas.ack_reserva_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <chatter/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

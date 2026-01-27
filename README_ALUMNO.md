@@ -1,6 +1,6 @@
 # Proyecto SGE – Odoo
 
-Alumno: Anas Ch
+Alumno: Anas Chajri
 Curso: 2025-2026
 
 Repositorio forked desde javnitram/SGE-odoo-it-yourself para el desarrollo
