@@ -2,19 +2,19 @@ from odoo import models, fields
 
 
 class AckEmpleado(models.Model):
-    _name = "ack_gestion_reservas.empleado"
+    _name = "ack.empleado"
     _description = "Empleado"
 
     name = fields.Char(string="Nombre", required=True)
     role = fields.Char(string="Rol")
 
     service_ids = fields.Many2many(
-        "ack_gestion_reservas.servicio",
+        comodel_name="ack.servicio",
         string="Servicios que puede realizar",
     )
 
-    reservation_ids = fields.One2many(
-        "ack.reserva",
-        "empleado_id",
+    reserva_ids = fields.One2many(
+        comodel_name="ack.reserva",
+        inverse_name="empleado_id",
         string="Reservas",
     )

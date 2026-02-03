@@ -1,6 +1,6 @@
 {
-    "name": "Gestión de Reservas",
-    "version": "1.0.0",
+    "name": "ACK - Gestión de Reservas",
+    "version": "17.0.1.0.0",
     "category": "Services",
     "summary": "Gestión de reservas de un negocio de servicios",
     "description": """
@@ -9,20 +9,18 @@ Permite administrar servicios, clientes, empleados y reservas,
 con control de permisos según el tipo de usuario.
     """,
     "author": "Anas Ch",
-    "website": "",
     "depends": ["base", "mail"],
     "data": [
-    "security/security.xml",
-    "security/ir.model.access.csv",
-    "views/servicio_views.xml",
-    "views/cliente_views.xml",
-    "views/empleado_views.xml",
-    "views/reserva_views.xml",
-    "views/reserva_chatter_views.xml",
-    "views/menu.xml",
-],
+        "security/security.xml",
+        "security/ir.model.access.csv",
 
+        "views/servicio_views.xml",
+        "views/cliente_views.xml",
+        "views/empleado_views.xml",
+        "views/reserva_views.xml",
 
+        "views/menu.xml",
+    ],
     "demo": [
         "data/demo.xml",
     ],

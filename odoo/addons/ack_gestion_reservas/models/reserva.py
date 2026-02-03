@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 
 class AckReserva(models.Model):
-    _name = "ack_gestion_reservas.reserva"
+    _name = "ack.reserva"
     _description = "Reserva"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
@@ -25,7 +25,7 @@ class AckReserva(models.Model):
     )
 
     cliente_id = fields.Many2one(
-        "ack_gestion_reservas.cliente",
+        comodel_name="ack.cliente",
         string="Cliente",
         required=True,
         ondelete="cascade",
@@ -33,13 +33,13 @@ class AckReserva(models.Model):
     )
 
     servicio_id = fields.Many2one(
-        "ack.servicio",
+        comodel_name="ack.servicio",
         string="Servicio",
         required=True,
     )
 
     empleado_id = fields.Many2one(
-        "ack.empleado",
+        comodel_name="ack.empleado",
         string="Empleado",
     )
 
@@ -49,10 +49,24 @@ class AckReserva(models.Model):
         store=True,
     )
 
+    date_delay = fields.Float(
+        string="Duración (horas)",
+        compute="_compute_date_delay",
+        store=True,
+    )
+
     @api.depends("servicio_id")
     def _compute_price(self):
         for record in self:
             record.price = record.servicio_id.price if record.servicio_id else 0.0
+
+    @api.depends("servicio_id")
+    def _compute_date_delay(self):
+        for record in self:
+            if record.servicio_id and record.servicio_id.duration:
+                record.date_delay = record.servicio_id.duration / 60
+            else:
+                record.date_delay = 0.0
 
     @api.constrains("date")
     def _check_date_not_in_past(self):
