@@ -4,7 +4,7 @@
     <!-- Tree -->
     <record id="ack_reserva_tree" model="ir.ui.view">
         <field name="name">ack.reserva.tree</field>
-        <field name="model">ack.reserva</field>
+        <field name="model">ack_gestion_reservas.reserva</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="date"/>
@@ -20,7 +20,7 @@
     <!-- Form -->
     <record id="ack_reserva_form" model="ir.ui.view">
         <field name="name">ack.reserva.form</field>
-        <field name="model">ack.reserva</field>
+        <field name="model">ack_gestion_reservas.reserva</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -44,7 +44,7 @@
     <!-- Calendar -->
     <record id="ack_reserva_calendar" model="ir.ui.view">
         <field name="name">ack.reserva.calendar</field>
-        <field name="model">ack.reserva</field>
+        <field name="model">ack_gestion_reservas.reserva</field>
         <field name="arch" type="xml">
             <calendar
                 string="Reservas"

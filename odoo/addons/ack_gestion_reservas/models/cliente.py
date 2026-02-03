@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class AckCliente(models.Model):
-    _name = "ack.cliente"
+    _name = "ack_gestion_reservas.cliente"
     _description = "Cliente"
 
     name = fields.Char(string="Nombre", required=True)
@@ -11,7 +11,7 @@ class AckCliente(models.Model):
     image_1920 = fields.Image(string="Imagen")
 
     reserva_ids = fields.One2many(
-        comodel_name="ack.reserva",
+        comodel_name="ack_gestion_reservas.reserva",
         inverse_name="cliente_id",
         string="Reservas",
     )

@@ -4,7 +4,7 @@
     <!-- Tree -->
     <record id="ack_cliente_tree" model="ir.ui.view">
         <field name="name">ack.cliente.tree</field>
-        <field name="model">ack.cliente</field>
+        <field name="model">ack_gestion_reservas.cliente</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -17,7 +17,7 @@
     <!-- Form -->
     <record id="ack_cliente_form" model="ir.ui.view">
         <field name="name">ack.cliente.form</field>
-        <field name="model">ack.cliente</field>
+        <field name="model">ack_gestion_reservas.cliente</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -47,7 +47,7 @@
     <!-- Action -->
     <record id="ack_cliente_action" model="ir.actions.act_window">
         <field name="name">Clientes</field>
-        <field name="res_model">ack.cliente</field>
+        <field name="res_model">ack_gestion_reservas.cliente</field>
         <field name="view_mode">tree,form</field>
     </record>
 

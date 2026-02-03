@@ -3,7 +3,7 @@ from odoo.exceptions import ValidationError
 
 
 class AckReserva(models.Model):
-    _name = "ack.reserva"
+    _name = "ack_gestion_reservas.reserva"
     _description = "Reserva"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
@@ -25,7 +25,7 @@ class AckReserva(models.Model):
     )
 
     cliente_id = fields.Many2one(
-        comodel_name="ack.cliente",
+        comodel_name="ack_gestion_reservas.cliente",
         string="Cliente",
         required=True,
         ondelete="cascade",
@@ -33,13 +33,13 @@ class AckReserva(models.Model):
     )
 
     servicio_id = fields.Many2one(
-        comodel_name="ack.servicio",
+        comodel_name="ack_gestion_reservas.servicio",
         string="Servicio",
         required=True,
     )
 
     empleado_id = fields.Many2one(
-        comodel_name="ack.empleado",
+        comodel_name="ack_gestion_reservas.empleado",
         string="Empleado",
     )
 

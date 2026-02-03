@@ -4,29 +4,29 @@
     <!-- ACCIONES -->
     <record id="ack_servicio_action" model="ir.actions.act_window">
         <field name="name">Servicios</field>
-        <field name="res_model">ack.servicio</field>
+        <field name="res_model">ack_gestion_reservas.servicio</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="ack_cliente_action" model="ir.actions.act_window">
         <field name="name">Clientes</field>
-        <field name="res_model">ack.cliente</field>
+        <field name="res_model">ack_gestion_reservas.cliente</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="ack_empleado_action" model="ir.actions.act_window">
         <field name="name">Empleados</field>
-        <field name="res_model">ack.empleado</field>
+        <field name="res_model">ack_gestion_reservas.empleado</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="ack_reserva_action" model="ir.actions.act_window">
         <field name="name">Reservas</field>
-        <field name="res_model">ack.reserva</field>
+        <field name="res_model">ack_gestion_reservas.reserva</field>
         <field name="view_mode">calendar,kanban,tree,form</field>
     </record>
 
-    <!-- MENÚ RAÍZ (CON ACTION → CLAVE) -->
+    <!-- MENÚ -->
     <menuitem
         id="ack_menu_root"
         name="Gestión de Reservas"
@@ -41,7 +41,7 @@
         parent="ack_menu_root"
         action="ack_cliente_action"
         sequence="10"
-        groups="group_ack_user"/>
+        groups="ack_gestion_reservas.group_ack_user"/>
 
     <menuitem
         id="ack_menu_empleados"
@@ -49,7 +49,7 @@
         parent="ack_menu_root"
         action="ack_empleado_action"
         sequence="20"
-        groups="group_ack_user"/>
+        groups="ack_gestion_reservas.group_ack_user"/>
 
     <menuitem
         id="ack_menu_servicios"
@@ -57,6 +57,6 @@
         parent="ack_menu_root"
         action="ack_servicio_action"
         sequence="30"
-        groups="group_ack_user"/>
+        groups="ack_gestion_reservas.group_ack_user"/>
 
 </odoo>
