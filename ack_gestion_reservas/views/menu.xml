@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ACCIONES -->
+    <record id="ack_servicio_action" model="ir.actions.act_window">
+        <field name="name">Servicios</field>
+        <field name="res_model">ack_gestion_reservas.servicio</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ack_cliente_action" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="res_model">ack_gestion_reservas.cliente</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ack_empleado_action" model="ir.actions.act_window">
+        <field name="name">Empleados</field>
+        <field name="res_model">ack_gestion_reservas.empleado</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ack_reserva_action" model="ir.actions.act_window">
+        <field name="name">Reservas</field>
+        <field name="res_model">ack_gestion_reservas.reserva</field>
+        <field name="view_mode">calendar,kanban,tree,form</field>
+    </record>
+
+    <!-- MENÚ -->
+    <menuitem
+        id="ack_menu_root"
+        name="Gestión de Reservas"
+        action="ack_reserva_action"
+        sequence="10"
+        groups="ack_gestion_reservas.group_ack_user"
+        web_icon="ack_gestion_reservas,static/description/icon.png"/>
+
+    <menuitem
+        id="ack_menu_clientes"
+        name="Clientes"
+        parent="ack_menu_root"
+        action="ack_cliente_action"
+        sequence="10"
+        groups="ack_gestion_reservas.group_ack_user"/>
+
+    <menuitem
+        id="ack_menu_empleados"
+        name="Empleados"
+        parent="ack_menu_root"
+        action="ack_empleado_action"
+        sequence="20"
+        groups="ack_gestion_reservas.group_ack_user"/>
+
+    <menuitem
+        id="ack_menu_servicios"
+        name="Servicios"
+        parent="ack_menu_root"
+        action="ack_servicio_action"
+        sequence="30"
+        groups="ack_gestion_reservas.group_ack_user"/>
+
+</odoo>

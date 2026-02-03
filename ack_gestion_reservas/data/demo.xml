@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- SERVICIOS -->
+    <record id="ack_servicio_limpieza" model="ack_gestion_reservas.servicio">
+        <field name="name">Limpieza básica</field>
+        <field name="description">Servicio de limpieza general</field>
+        <field name="price">30</field>
+        <field name="duration">60</field>
+    </record>
+
+    <record id="ack_servicio_mantenimiento" model="ack_gestion_reservas.servicio">
+        <field name="name">Mantenimiento</field>
+        <field name="description">Servicio de mantenimiento técnico</field>
+        <field name="price">50</field>
+        <field name="duration">90</field>
+    </record>
+
+    <!-- CLIENTES -->
+    <record id="ack_cliente_juan" model="ack_gestion_reservas.cliente">
+        <field name="name">Juan Pérez</field>
+        <field name="email">juan@example.com</field>
+        <field name="phone">600123123</field>
+    </record>
+
+    <record id="ack_cliente_maria" model="ack_gestion_reservas.cliente">
+        <field name="name">María López</field>
+        <field name="email">maria@example.com</field>
+        <field name="phone">600456456</field>
+    </record>
+
+    <!-- EMPLEADOS -->
+    <record id="ack_empleado_ana" model="ack_gestion_reservas.empleado">
+        <field name="name">Ana García</field>
+        <field name="role">Técnica</field>
+        <field name="service_ids"
+               eval="[(6, 0, [
+                   ref('ack_servicio_limpieza'),
+                   ref('ack_servicio_mantenimiento')
+               ])]"/>
+    </record>
+
+    <record id="ack_empleado_pedro" model="ack_gestion_reservas.empleado">
+        <field name="name">Pedro Martínez</field>
+        <field name="role">Operario</field>
+        <field name="service_ids"
+               eval="[(6, 0, [ref('ack_servicio_limpieza')])]"/>
+    </record>
+
+    <!-- RESERVAS -->
+    <record id="ack_reserva_1" model="ack_gestion_reservas.reserva">
+        <field name="date">2027-03-01 10:00:00</field>
+        <field name="cliente_id" ref="ack_cliente_juan"/>
+        <field name="servicio_id" ref="ack_servicio_limpieza"/>
+        <field name="empleado_id" ref="ack_empleado_ana"/>
+        <field name="state">confirmed</field>
+    </record>
+
+    <record id="ack_reserva_2" model="ack_gestion_reservas.reserva">
+        <field name="date">2027-03-02 16:00:00</field>
+        <field name="cliente_id" ref="ack_cliente_maria"/>
+        <field name="servicio_id" ref="ack_servicio_mantenimiento"/>
+        <field name="empleado_id" ref="ack_empleado_pedro"/>
+        <field name="state">draft</field>
+    </record>
+
+</odoo>

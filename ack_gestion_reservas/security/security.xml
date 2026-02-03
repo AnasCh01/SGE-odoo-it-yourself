@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Grupo de usuarios del módulo: ##ys6k-bnar-gkja masterPassword -->
+    <record id="group_ack_user" model="res.groups">
+        <field name="name">ACK Gestión Reservas - Usuario</field>
+        <field name="category_id" ref="base.module_category_services"/>
+    </record>
+
+    <!-- Grupo de administradores del módulo -->
+    <record id="group_ack_admin" model="res.groups">
+        <field name="name">ACK Gestión Reservas - Administrador</field>
+        <field name="category_id" ref="base.module_category_services"/>
+        <field name="implied_ids" eval="[(4, ref('group_ack_user'))]"/>
+    </record>
+
+</odoo>

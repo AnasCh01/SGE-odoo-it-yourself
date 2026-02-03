@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="ack_empleado_tree" model="ir.ui.view">
+        <field name="name">ack.empleado.tree</field>
+        <field name="model">ack_gestion_reservas.empleado</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="role"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="ack_empleado_form" model="ir.ui.view">
+        <field name="name">ack.empleado.form</field>
+        <field name="model">ack_gestion_reservas.empleado</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="role"/>
+                    </group>
+
+                    <group string="Servicios">
+                        <field name="service_ids" widget="many2many_tags"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Reservas">
+                            <field name="reserva_ids">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="cliente_id"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
