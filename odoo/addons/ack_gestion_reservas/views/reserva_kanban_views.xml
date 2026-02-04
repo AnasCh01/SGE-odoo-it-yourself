@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="ack_reserva_kanban" model="ir.ui.view">
+        <field name="name">ack.reserva.kanban</field>
+        <field name="model">ack_gestion_reservas.reserva</field>
+        <field name="arch" type="xml">
+            <kanban
+                default_group_by="state"
+                class="o_kanban_small_column"
+            >
+                <field name="state"/>
+                <field name="date"/>
+                <field name="cliente_id"/>
+                <field name="servicio_id"/>
+                <field name="empleado_id"/>
+                <field name="price"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_card">
+                            <div class="o_kanban_details">
+
+                                <strong>
+                                    <field name="cliente_id"/>
+                                </strong>
+
+                                <div class="text-muted">
+                                    <field name="servicio_id"/>
+                                </div>
+
+                                <div>
+                                    <span>📅 </span>
+                                    <field name="date"/>
+                                </div>
+
+                                <div>
+                                    <span>👤 </span>
+                                    <field name="empleado_id"/>
+                                </div>
+
+                                <div>
+                                    <span>💶 </span>
+                                    <field name="price"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>
