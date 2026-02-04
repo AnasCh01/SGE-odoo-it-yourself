@@ -1,17 +1,17 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
+access_ack_servicio_read_all,ack_gestion_reservas.servicio read all,model_ack_gestion_reservas_servicio,,1,0,0,0
 access_ack_servicio_user,ack_gestion_reservas.servicio user,model_ack_gestion_reservas_servicio,group_ack_user,1,0,0,0
 access_ack_servicio_admin,ack_gestion_reservas.servicio admin,model_ack_gestion_reservas_servicio,group_ack_admin,1,1,1,1
 
+access_ack_cliente_read_all,ack_gestion_reservas.cliente read all,model_ack_gestion_reservas_cliente,,1,0,0,0
 access_ack_cliente_user,ack_gestion_reservas.cliente user,model_ack_gestion_reservas_cliente,group_ack_user,1,1,1,0
 access_ack_cliente_admin,ack_gestion_reservas.cliente admin,model_ack_gestion_reservas_cliente,group_ack_admin,1,1,1,1
 
+access_ack_empleado_read_all,ack_gestion_reservas.empleado read all,model_ack_gestion_reservas_empleado,,1,0,0,0
 access_ack_empleado_user,ack_gestion_reservas.empleado user,model_ack_gestion_reservas_empleado,group_ack_user,1,1,0,0
 access_ack_empleado_admin,ack_gestion_reservas.empleado admin,model_ack_gestion_reservas_empleado,group_ack_admin,1,1,1,1
 
+access_ack_reserva_read_all,ack_gestion_reservas.reserva read all,model_ack_gestion_reservas_reserva,,1,0,0,0
 access_ack_reserva_user,ack_gestion_reservas.reserva user,model_ack_gestion_reservas_reserva,group_ack_user,1,1,1,0
 access_ack_reserva_admin,ack_gestion_reservas.reserva admin,model_ack_gestion_reservas_reserva,group_ack_admin,1,1,1,1
-
-
-
-
