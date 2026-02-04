@@ -41,7 +41,7 @@
         </field>
     </record>
 
-    <!-- Calendar -->
+    <!-- Calendario -->
     <record id="ack_reserva_calendar" model="ir.ui.view">
         <field name="name">ack.reserva.calendar</field>
         <field name="model">ack_gestion_reservas.reserva</field>
@@ -58,5 +58,53 @@
             </calendar>
         </field>
     </record>
+
+    <!-- Busqueda -->
+    <record id="ack_reserva_search" model="ir.ui.view">
+    <field name="name">ack.reserva.search</field>
+    <field name="model">ack_gestion_reservas.reserva</field>
+    <field name="arch" type="xml">
+        <search string="Buscar reservas">
+
+            <!-- Búsqueda rapida -->
+            <field name="cliente_id"/>
+            <field name="empleado_id"/>
+            <field name="servicio_id"/>
+
+            <!-- Filtros -->
+            <filter
+                string="Pendientes"
+                name="filter_draft"
+                domain="[('state','=','draft')]"/>
+
+            <filter
+                string="Confirmadas"
+                name="filter_confirmed"
+                domain="[('state','=','confirmed')]"/>
+
+            <filter
+                string="Canceladas"
+                name="filter_cancelled"
+                domain="[('state','=','cancelled')]"/>
+
+            <separator/>
+
+            <!-- Agrupaciones -->
+            <group expand="0" string="Agrupar por">
+                <filter
+                    string="Estado"
+                    name="group_state"
+                    context="{'group_by':'state'}"/>
+
+                <filter
+                    string="Empleado"
+                    name="group_empleado"
+                    context="{'group_by':'empleado_id'}"/>
+            </group>
+
+        </search>
+    </field>
+</record>
+
 
 </odoo>
